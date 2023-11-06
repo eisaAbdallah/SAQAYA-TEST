@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "9d6de574-784e-48ad-a748-33f9236ddf01",
+		"name": "SAQAYA COLLECTION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"firstName\": \"Michael\",\n  \"lastName\": \"Knight\",\n  \"email\": \"info@saqaya.com\",\n  \"marketingConsent\": false\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Single User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/user/49b00098ef3e38e7fd89c206d9a842a474839e6d",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"49b00098ef3e38e7fd89c206d9a842a474839e6d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
