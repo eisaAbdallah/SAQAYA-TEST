@@ -99,7 +99,7 @@ if(userDetails.isEmpty()){
         SingleUserReponse   userResponse=null;
         if(!user.getFirstName().equals(firstName)){
 
-            throw new Exception("This user is not found, wrong Token");
+            throw new BeanNotFoundException("This user is not found, wrong Token");
 
         }
         if(user.isMarketingConsent()==false){
