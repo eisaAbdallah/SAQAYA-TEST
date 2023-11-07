@@ -92,7 +92,7 @@ if(userDetails.isEmpty()){
         String[] pieces = token.split("\\.");
         String b64payload = pieces[1];
         String jsonString = new String(Base64.decodeBase64(b64payload), "UTF-8");
-      String firstName=  jsonString.split(",")[0];
+      String firstName=  jsonString.split(",")[0].split(":")[1].replaceAll("\"","");
 
 
         User user= repository.getUserById(id);

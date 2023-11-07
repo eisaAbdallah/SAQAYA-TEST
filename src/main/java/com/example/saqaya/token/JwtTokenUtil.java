@@ -53,8 +53,13 @@ public class JwtTokenUtil implements Serializable {
     public String generateToken(UserRequestBody userDetails) throws NoSuchAlgorithmException {
         Map<String, Object> claims = new HashMap<>();
 
+        return  Jwts.builder()
+                .setSubject((userDetails.getFirstName()+","+userDetails.getLastName()+","+userDetails.getEmail()+","+userDetails.getMarketingConsent()))
+                .setIssuedAt(new Date())
+                .setExpiration(new Date((new Date()).getTime()))
 
-        return doGenerateToken(claims, userDetails.getFirstName()+","+userDetails.getLastName()+","+userDetails.getEmail()+","+userDetails.getMarketingConsent());
+                .compact();
+       // (claims, userDetails.getFirstName()+","+userDetails.getLastName()+","+userDetails.getEmail()+","+userDetails.getMarketingConsent());
     }
 
 
