@@ -92,12 +92,12 @@ if(userDetails.isEmpty()){
         String[] pieces = token.split("\\.");
         String b64payload = pieces[1];
         String jsonString = new String(Base64.decodeBase64(b64payload), "UTF-8");
-      String email=  jsonString.split(",")[2];
+      String firstName=  jsonString.split(",")[0];
 
 
         User user= repository.getUserById(id);
         SingleUserReponse   userResponse=null;
-        if(!user.getEmail().equals(email)){
+        if(!user.getFirstName().equals(firstName)){
 
             throw new Exception("This user is not found, wrong Token");
 
